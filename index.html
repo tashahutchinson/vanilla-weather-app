@@ -16,6 +16,15 @@
 </head>
 <body>
     <div class="container">
+
+    <form class="search-bar" id="search-form">
+        <input type="text" class="search-text" id="city-input" placeholder="🔍  Enter a city" />
+        <input type="submit" class="search-button" value="Search" />
+    </form>
+
+    <button type="button" class="location-button" id="location-button">Your Location</button>
+
+    <br>
        
     <h1 class="location">Perth, WA</h1>
     <div class="date">Thursday 3 February, 2022 | 8:40pm</div>
@@ -38,25 +47,25 @@
 <div class="row row-cols-1 row-cols-md-3 g-2">
   <div class="col">
     <div class="card text-center bg-transparent border-0">
-      <div class="card-body info-box">
-          <p class="card-text info-title">Feels Like:</p>
-        <h5 class="card-title info-numbers">20°C</h5>
+      <div class="info-box">
+          <p class="info-title">Feels Like:</p>
+        <p class="info-numbers">20°C</p>
       </div>
     </div>
   </div>
   <div class="col">
       <div class="card text-center bg-transparent border-0">
-      <div class="card-body info-box">
-          <p class="card-text info-title">Humidity:</p>
-        <h5 class="card-title info-numbers">20%</h5>
+      <div class="info-box">
+          <p class="info-title">Humidity:</p>
+        <p class="info-numbers">20%</p>
       </div>
     </div>
   </div>
   <div class="col">
     <div class="card text-center bg-transparent border-0">
-      <div class="card-body info-box">
-          <p class="card-text info-title">Wind:</p>
-        <h5 class="card-title info-numbers">14km/h</h5>
+      <div class="info-box">
+          <p class="info-title">Wind:</p>
+        <p class="info-numbers">14km/h</p>
       </div>
     </div>
   </div>
