@@ -23,62 +23,44 @@
     <br>
 
     <div class="row">
-        <div class="col-sm current-box"><img src="https://ssl.gstatic.com/onebox/weather/64/sunny.png" alt="sunny"></div>
+        <div class="col-sm current-box"><img class=main-icon src="https://ssl.gstatic.com/onebox/weather/64/sunny.png" alt="sunny"></div>
         <div class="col-sm current-box">
-        <p>23°C</p>
-        <p>Feels like 30°C</p>
-        <p>Max: 20°C | Min: 12°C</p>
+        <div class="current-temp">30</div>
+        <div class="units"> °C | °F</div>
+        <div class="current-minmax">Max:
+        <span id="current-max">20°C</span>
+        | Min: 
+        <span id="current-min">12°C</span></div>
     </div>
     </div>
 
-    <div class="row">
-        <div class="col-4">
-            Pressure: 1000hPa
-        </div>
-        <div class="col-4">
-            Humidity: 20%
-        </div>
-        <div class="col-4">
-            Wind: 14km/h
-        </div>
+    <div>
+<div class="row row-cols-1 row-cols-md-3 g-2">
+  <div class="col">
+    <div class="card text-center bg-transparent border-0">
+      <div class="card-body info-box">
+          <p class="card-text info-title">Feels Like:</p>
+        <h5 class="card-title info-numbers">20°C</h5>
+      </div>
     </div>
-
-    <hr>    
-    <div class="row">
-        <div class="col-3">Friday</div>
-        <div class="col-3">19°C</div>
-        <div class="col-3">29°C</div>
-        <div class="col-3"><img src="https://ssl.gstatic.com/onebox/weather/64/sunny.png" alt="sunny"></div>
+  </div>
+  <div class="col">
+      <div class="card text-center bg-transparent border-0">
+      <div class="card-body info-box">
+          <p class="card-text info-title">Humidity:</p>
+        <h5 class="card-title info-numbers">20%</h5>
+      </div>
     </div>
-
-     <div class="row">
-        <div class="col-3">Saturday</div>
-        <div class="col-3">19°C</div>
-        <div class="col-3">29°C</div>
-        <div class="col-3"><img src="https://ssl.gstatic.com/onebox/weather/64/sunny.png" alt="sunny"></div>
+  </div>
+  <div class="col">
+    <div class="card text-center bg-transparent border-0">
+      <div class="card-body info-box">
+          <p class="card-text info-title">Wind:</p>
+        <h5 class="card-title info-numbers">14km/h</h5>
+      </div>
     </div>
-
-     <div class="row">
-        <div class="col-3">Sunday</div>
-        <div class="col-3">19°C</div>
-        <div class="col-3">29°C</div>
-        <div class="col-3"><img src="https://ssl.gstatic.com/onebox/weather/64/sunny.png" alt="sunny"></div>
-    </div>
-
-     <div class="row">
-        <div class="col-3">Monday</div>
-        <div class="col-3">19°C</div>
-        <div class="col-3">29°C</div>
-        <div class="col-3"><img src="https://ssl.gstatic.com/onebox/weather/64/sunny.png" alt="sunny"></div>
-    </div>
-
-     <div class="row">
-        <div class="col-3">Tuesday</div>
-        <div class="col-3">19°C</div>
-        <div class="col-3">29°C</div>
-        <div class="col-3"><img src="https://ssl.gstatic.com/onebox/weather/64/sunny.png" alt="sunny"></div>
-    </div>
-
+  </div>
+  </div>
 
 
     <hr>

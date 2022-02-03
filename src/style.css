@@ -16,3 +16,69 @@ body{
     box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
 }
 
+
+.location {
+    font-family: 'Oswald', sans-serif;
+    font-size: 50px;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 20px;
+    line-height: 50px;
+}
+
+.date {
+    text-align: center;
+    font-weight: 200;
+    margin-top: 12px;
+}
+
+.current-box{
+    margin: 10px; 
+    padding: 10px;
+    text-align: center;
+}
+
+.current-temp{
+    font-family: 'Oswald', sans-serif;
+    text-align: center;
+    font-size: 90px;
+    font-weight: 700;
+    line-height: 100px;
+}
+
+.units{
+    font-weight: 200;
+    font-size: 20px;
+}
+
+.current-minmax{
+    margin: 0px;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.main-icon{
+    max-width: 170px;
+}
+
+.info-box{
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 4px 12px;
+    padding-bottom: 20px;
+    margin-top: 20px;
+}
+
+.info-title{
+    font-size: 14px;
+    font-weight: 400;
+    padding-top: 10px;
+}
+
+.info-numbers{
+    line-height: 5px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 30px;
+    padding-bottom: 10px;
+}
