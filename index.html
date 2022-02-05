@@ -28,7 +28,7 @@
 
     <br>
        
-    <h1 class="location">Perth, WA</h1>
+    <h1 class="location" id="city">Perth, WA</h1>
     <div class="date">Thursday 3 February, 2022 | 8:40pm</div>
 
     <br>
@@ -36,12 +36,13 @@
     <div class="row">
         <div class="col-sm current-box"><img class=main-icon src="images/sunny.svg" alt="sunny"></div>
         <div class="col-sm current-box">
-        <div class="current-temp">30°C</div>
+        <div class="current-temp"><span id="temperature">30</span>°C</div>
         <div class="temp-selector"> <a href="#" class="units">Celcius</a>  | <a href="#" class="units">Farenheit</a></div>
+        <div class="weather-description" id="description">Sunny</div>
         <div class="current-minmax">Max:
-        <span id="current-max">20°C</span>
+        <span id="current-max">20</span>°C
         | Min: 
-        <span id="current-min">12°C</span></div>
+        <span id="current-min">12</span>°C</div>
     </div>
     </div>
 
@@ -51,7 +52,7 @@
     <div class="card text-center bg-transparent border-0">
       <div class="info-box">
           <p class="info-title">Feels Like:</p>
-        <p class="info-numbers">20°C</p>
+        <p class="info-numbers"><span id="feels-like">20</span>°C</p>
       </div>
     </div>
   </div>
@@ -59,7 +60,7 @@
       <div class="card text-center bg-transparent border-0">
       <div class="info-box">
           <p class="info-title">Humidity:</p>
-        <p class="info-numbers">20%</p>
+        <p class="info-numbers"><span id="humidity">20</span>%</p>
       </div>
     </div>
   </div>
@@ -67,7 +68,7 @@
     <div class="card text-center bg-transparent border-0">
       <div class="info-box">
           <p class="info-title">Wind:</p>
-        <p class="info-numbers">14km/h</p>
+        <p class="info-numbers"><span id="wind">14</span>km/h</p>
       </div>
     </div>
   </div>

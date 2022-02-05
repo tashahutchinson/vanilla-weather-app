@@ -82,9 +82,9 @@ body{
 
 .current-temp{
     font-family: 'Oswald', sans-serif;
-    font-size: 80px;
+    font-size: 85px;
     font-weight: 700;
-    line-height: 100px;
+    line-height: 90px;
 }
 
 
@@ -109,11 +109,16 @@ body{
     font-weight: 600;
 }
 
-.current-minmax{
-    margin: 0px;
+.weather-description {
+    padding-top: 10px;
     font-weight: 600;
     font-size: 18px;
-    line-height: 50px;
+    text-transform: capitalize;
+}
+
+.current-minmax{
+    margin: 0px;
+    font-weight: 200;
 }
 
 .main-icon{
