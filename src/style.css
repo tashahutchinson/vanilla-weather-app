@@ -12,7 +12,7 @@ body{
     border-radius: 15px;
     padding: 30px;
     margin-top: 50px;
-    margin-bottom: 100px;
+    margin-bottom: 30px;
     box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
 }
 
@@ -82,21 +82,21 @@ body{
 
 .current-temp{
     font-family: 'Oswald', sans-serif;
-    text-align: center;
-    font-size: 90px;
+    font-size: 80px;
     font-weight: 700;
     line-height: 100px;
 }
 
 .units{
-    font-weight: 600;
-    font-size: 20px;
+    font-weight: 200;
+    font-size: 14px;
 }
 
 .current-minmax{
     margin: 0px;
-    font-weight: 200;
-    font-size: 16px;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 50px;
 }
 
 .main-icon{
@@ -124,4 +124,12 @@ body{
     font-weight: 600;
     font-size: 30px;
     padding-bottom: 10px;
+}
+
+
+.footer-link{
+    font-size: 11px;
+    font-weight: 100;
+    text-align: center;
+    margin-bottom: 100px;
 }
