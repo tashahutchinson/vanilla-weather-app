@@ -52,11 +52,16 @@ function displayTemperature(response) {
     dateElement.innerHTML = (formatDate(response.data.dt * 1000));
 
     let mainIconElement = document.querySelector("#main-icon");
+    let weatherName = response.data.weather[0].main;
     mainIconElement.setAttribute(
       "src",
-      `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+      `images/${weatherName}.svg`
     );
-    mainIconElement.setAttribute("alt", response.data.weather[0].description);
+    mainIconElement.setAttribute("alt", response.data.weather[0].main);
+
+    console.log(weatherName);
+    
+    console.log(response.data.weather[0].main);
 
     celsiusTemperature = response.data.main.temp;
     maxTemperature = response.data.main.temp_max;
@@ -65,7 +70,7 @@ function displayTemperature(response) {
 }
 
 
-// city search 
+
 function search(city){
     let apiKey = "7221c1b666843ec019546f9ad14749ae";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
@@ -129,7 +134,7 @@ function displayCelsius(event) {
     displayFeelsLikeTemperature.innerHTML = `${Math.round(feelsLikeTemperature)}°C`; 
 }
 
-//
+
 
 
     let celsiusTemperature = null;
