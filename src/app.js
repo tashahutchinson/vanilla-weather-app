@@ -1,9 +1,34 @@
+function formatDate(timestamp) {
+    let date = new Date(timestamp);
+
+    let hours = date.getHours();
+        if (hours < 10) {
+        hours = `0${hours}`;
+        }
+
+    let minutes = date.getMinutes();
+        if (minutes < 10) {
+        minutes = `0${minutes}`;
+        }
+
+    let weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+    let weekday = weekdays[date.getDay()];
+
+    return ` ${weekday} | ${hours}:${minutes}`;
+}
+
+
+
+
 function displayTemperature(response) {
     let temperatureElement = document.querySelector("#temperature");
     temperatureElement.innerHTML = Math.round(response.data.main.temp);
     
     let cityElement = document.querySelector("#city");
     cityElement.innerHTML = response.data.name;
+
+    let countryElement = document.querySelector("#country");
+    countryElement.innerHTML = response.data.sys.country;
 
     let descriptionElement = document.querySelector("#description");
     descriptionElement.innerHTML = response.data.weather[0].description;
@@ -18,14 +43,18 @@ function displayTemperature(response) {
     feelsLikeElement.innerHTML = Math.round(response.data.main.feels_like);
 
     let humidityElement = document.querySelector("#humidity");
-    humidityElement.innerHTML = Math.round(response.data.main.humidity);
+    humidityElement.innerHTML = response.data.main.humidity;
 
     let windElement = document.querySelector("#wind");
     windElement.innerHTML = Math.round(response.data.wind.speed);
+
+    let dateElement = document.querySelector("#date");
+    dateElement.innerHTML = (formatDate(response.data.dt * 1000));
 }
 
 let apiKey = "7221c1b666843ec019546f9ad14749ae"
+let city = "London"
 let apiUrl =
-  `https://api.openweathermap.org/data/2.5/weather?q=London&appid=${apiKey}&units=metric`;
+  `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
   axios.get(apiUrl).then(displayTemperature);
