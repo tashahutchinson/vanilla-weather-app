@@ -34,13 +34,13 @@ function displayTemperature(response) {
     descriptionElement.innerHTML = response.data.weather[0].description;
 
     let maxElement = document.querySelector("#current-max");
-    maxElement.innerHTML = Math.round(response.data.main.temp_max);
+    maxElement.innerHTML = `${Math.round(response.data.main.temp_max)}°C`;
 
     let minElement = document.querySelector("#current-min");
-    minElement.innerHTML = Math.round(response.data.main.temp_min);
+    minElement.innerHTML = `${Math.round(response.data.main.temp_min)}°C`;
 
     let feelsLikeElement = document.querySelector("#feels-like");
-    feelsLikeElement.innerHTML = Math.round(response.data.main.feels_like);
+    feelsLikeElement.innerHTML = `${Math.round(response.data.main.feels_like)}°C`;
 
     let humidityElement = document.querySelector("#humidity");
     humidityElement.innerHTML = response.data.main.humidity;
@@ -59,6 +59,9 @@ function displayTemperature(response) {
     mainIconElement.setAttribute("alt", response.data.weather[0].description);
 
     celsiusTemperature = response.data.main.temp;
+    maxTemperature = response.data.main.temp_max;
+    minTemperature = response.data.main.temp_min;
+    feelsLikeTemperature = response.data.main.feels_like;
 }
 
 
@@ -82,18 +85,42 @@ function displayFahrenheit(event) {
     let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
     let temperatureElement = document.querySelector("#temperature");
     temperatureElement.innerHTML = `${Math.round(fahrenheitTemperature)}°F`;
+
+    let fahrenheitMaxTemperature = (maxTemperature * 9) / 5 + 32;
+    let displayMaxTemperature = document.querySelector("#current-max");
+    displayMaxTemperature.innerHTML = `${Math.round(fahrenheitMaxTemperature)}°F`;
+
+    let fahrenheitMinTemperature = (minTemperature * 9) / 5 + 32;
+    let displayMinTemperature = document.querySelector("#current-min");
+    displayMinTemperature.innerHTML = `${Math.round(fahrenheitMinTemperature)}°F`;
+
+    let fahrenheitFeelsLikeTemperature = (feelsLikeTemperature * 9) / 5 + 32;
+    let displayFeelsLikeTemperature = document.querySelector("#feels-like");
+    displayFeelsLikeTemperature.innerHTML = `${Math.round(fahrenheitFeelsLikeTemperature)}°F`;
 }
 
 function displayCelsius(event) {
     event.preventDefault();
     let temperatureElement = document.querySelector("#temperature");
     temperatureElement.innerHTML = `${Math.round(celsiusTemperature)}°C`;
+
+    let displayMaxTemperature = document.querySelector("#current-max");
+    displayMaxTemperature.innerHTML = `${Math.round(maxTemperature)}°C`; 
+
+    let displayMinTemperature = document.querySelector("#current-min");
+    displayMinTemperature.innerHTML = `${Math.round(minTemperature)}°C`; 
+
+    let displayFeelsLikeTemperature = document.querySelector("#feels-like");
+    displayFeelsLikeTemperature.innerHTML = `${Math.round(feelsLikeTemperature)}°C`; 
 }
 
 //
 
 
     let celsiusTemperature = null;
+    let maxTemperature = null;
+    let minTemperature = null;
+    let feelsLikeTemperature = null;
 
     let form = document.querySelector("#search-form");
     form.addEventListener("submit", handleSubmit);
