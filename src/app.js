@@ -19,7 +19,6 @@ function formatDate(timestamp) {
 
 
 
-
 function displayTemperature(response) {
     let temperatureElement = document.querySelector("#temperature");
     temperatureElement.innerHTML = `${Math.round(response.data.main.temp)}°C`;
@@ -135,7 +134,7 @@ function displayCelsius(event) {
 }
 
 
-
+search("Perth");
 
     let celsiusTemperature = null;
     let maxTemperature = null;
