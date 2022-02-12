@@ -17,8 +17,6 @@ function formatDate(timestamp) {
     return ` ${weekday} | ${hours}:${minutes}`;
 }
 
-
-
 function displayTemperature(response) {
     let temperatureElement = document.querySelector("#temperature");
     temperatureElement.innerHTML = `${Math.round(response.data.main.temp)}°C`;
