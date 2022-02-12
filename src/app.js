@@ -17,6 +17,27 @@ function formatDate(timestamp) {
     return ` ${weekday} | ${hours}:${minutes}`;
 }
 
+function displayForecast(){
+    let forecastElement = document.querySelector("#forecast");
+
+    let forecastHTML = `<div class="row">`;
+    let days = ["Saturday", "Sunday", "Monday"];
+    days.forEach(function(day) {
+        forecastHTML =
+          forecastHTML +
+          `<div class="row forecast-box"><div class="col-4"> <span class="forecast-day">${day}</span></div>
+        <div class="col-3 text-center"> <span class="forecast-high">20°C</span></div>
+        <div class="col-3"><span class="forecast-low">10°C</span></div>
+        <div class="col-2 text-center"><img class="forecast-icon" src="images/clear.svg" alt="sunny"></div>
+        </div>`;
+
+    });
+
+    forecastHTML = forecastHTML + `</div>`;
+
+    forecastElement.innerHTML = forecastHTML;
+}
+
 function displayTemperature(response) {
     let temperatureElement = document.querySelector("#temperature");
     temperatureElement.innerHTML = `${Math.round(response.data.main.temp)}°C`;
@@ -138,6 +159,9 @@ search("Perth");
     let maxTemperature = null;
     let minTemperature = null;
     let feelsLikeTemperature = null;
+
+
+displayForecast();
 
 
     let form = document.querySelector("#search-form");
