@@ -145,6 +145,39 @@ body{
 }
 
 
+.forecast-box{
+    background: linear-gradient(240deg, rgba(255, 255, 255, 0.1), rgba(230, 230, 230, 0.3));
+    border-radius: 15px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+    padding: 15px;
+    margin: 15px 0;
+}
+
+.forecast-day{
+    font-size: 14px;
+    position: relative;
+    top: 9px
+}
+
+.forecast-high, .forecast-low{
+    font-family: 'Oswald', sans-serif;
+    font-size: 25px;
+}
+
+.forecast-high{
+    font-weight: 700;
+}
+
+.forecast-low{
+    font-weight: 200;
+    opacity: 70%;
+}
+
+.forecast-icon{
+    max-width: 40px;
+}
+
+
 .footer-text{
     font-size: 11px;
     font-weight: 100;
