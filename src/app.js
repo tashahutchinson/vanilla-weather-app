@@ -68,6 +68,21 @@ function getForecast(coordinates){
     axios.get(apiUrl).then(displayForecast);
 }
 
+function changeStyle(temperature){
+    console.log(temperature); 
+    
+    let changeColor = document.querySelector("#container");              
+
+    if (temperature < 18) {
+       changeColor.classList.remove("warm-container");
+       changeColor.classList.add("cold-container");
+    } else {
+        changeColor.classList.remove("cold-container");
+        changeColor.classList.add("warm-container");
+    }
+
+}
+
 
 function displayTemperature(response) {
     let temperatureElement = document.querySelector("#temperature");
@@ -114,6 +129,8 @@ function displayTemperature(response) {
     feelsLikeTemperature = response.data.main.feels_like;
 
     getForecast(response.data.coord);
+
+    changeStyle(response.data.main.temp);
 
 }
 
