@@ -53,24 +53,19 @@ function displayForecast(response){
         <div class="col-2 text-center"><img class="forecast-icon" src="images/${forecastDay.weather[0].main}.svg" alt="sunny"></div>
         </div>`;
     }
-
     });
 
     forecastHTML = forecastHTML + `</div>`;
-
     forecastElement.innerHTML = forecastHTML;
 }
 
 function getForecast(coordinates){ 
     let apiKey = "7221c1b666843ec019546f9ad14749ae";
     let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
-
     axios.get(apiUrl).then(displayForecast);
 }
 
-function changeStyle(temperature){
-    console.log(temperature); 
-    
+function changeStyle(temperature){    
     let changeColor = document.querySelector("#container");              
 
     if (temperature < 18) {
@@ -80,7 +75,6 @@ function changeStyle(temperature){
         changeColor.classList.remove("cold-container");
         changeColor.classList.add("warm-container");
     }
-
 }
 
 
