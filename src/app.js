@@ -17,7 +17,11 @@ function formatDate(timestamp) {
     return ` ${weekday} | ${hours}:${minutes}`;
 }
 
-function displayForecast(){
+
+
+function displayForecast(response){
+
+    console.log(response.data.daily);
     let forecastElement = document.querySelector("#forecast");
 
     let forecastHTML = `<div class="row">`;
@@ -37,6 +41,14 @@ function displayForecast(){
 
     forecastElement.innerHTML = forecastHTML;
 }
+
+function getForecast(coordinates){ 
+    let apiKey = "7221c1b666843ec019546f9ad14749ae";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+
+    axios.get(apiUrl).then(displayForecast);
+}
+
 
 function displayTemperature(response) {
     let temperatureElement = document.querySelector("#temperature");
@@ -77,15 +89,15 @@ function displayTemperature(response) {
     );
     mainIconElement.setAttribute("alt", response.data.weather[0].main);
 
-    console.log(weatherName);
-    
-    console.log(response.data.weather[0].main);
-
     celsiusTemperature = response.data.main.temp;
     maxTemperature = response.data.main.temp_max;
     minTemperature = response.data.main.temp_min;
     feelsLikeTemperature = response.data.main.feels_like;
+
+    getForecast(response.data.coord);
+
 }
+
 
 
 
@@ -96,11 +108,15 @@ function search(city){
     axios.get(apiUrl).then(displayTemperature);
 }
 
+
+
 function handleSubmit(event) {
     event.preventDefault();
     let cityInputElement = document.querySelector("#city-input");
     search(cityInputElement.value);
 }
+
+
 
 function showPosition(position) {
   let latitude = position.coords.latitude;
@@ -160,8 +176,6 @@ search("Perth");
     let minTemperature = null;
     let feelsLikeTemperature = null;
 
-
-displayForecast();
 
 
     let form = document.querySelector("#search-form");
