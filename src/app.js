@@ -18,22 +18,41 @@ function formatDate(timestamp) {
 }
 
 
+function formatDay(timestamp){
+    let date = new Date(timestamp * 1000);
+    let day = date.getDay();
+    let days = [
+      "Sunday",
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+    ];
+
+    return days[day];
+}
+
+
 
 function displayForecast(response){
+    let forecast = response.data.daily;
 
-    console.log(response.data.daily);
     let forecastElement = document.querySelector("#forecast");
 
     let forecastHTML = `<div class="row">`;
-    let days = ["Saturday", "Sunday", "Monday"];
-    days.forEach(function(day) {
+
+    forecast.forEach(function(forecastDay, index) {
+        if (index < 6) {
         forecastHTML =
           forecastHTML +
-          `<div class="row forecast-box"><div class="col-4"> <span class="forecast-day">${day}</span></div>
-        <div class="col-3 text-center"> <span class="forecast-high">20°C</span></div>
-        <div class="col-3"><span class="forecast-low">10°C</span></div>
-        <div class="col-2 text-center"><img class="forecast-icon" src="images/clear.svg" alt="sunny"></div>
+          `<div class="row forecast-box"><div class="col-4"> <span class="forecast-day">${formatDay(forecastDay.dt)}</span></div>
+        <div class="col-3 text-center"> <span class="forecast-high">${Math.round(forecastDay.temp.max)}°C</span></div>
+        <div class="col-3"><span class="forecast-low">${Math.round(forecastDay.temp.min)}°C</span></div>
+        <div class="col-2 text-center"><img class="forecast-icon" src="images/${forecastDay.weather[0].main}.svg" alt="sunny"></div>
         </div>`;
+    }
 
     });
 
